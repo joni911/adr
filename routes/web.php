@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TransaksiAdrController;
+use App\Models\TransaksiAdr;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/adr/next', [TransaksiAdrController::class, 'next'])->name('perkiraan.next');
+// Tambahkan route untuk download Excel
+Route::post('/adr/download-excel', [TransaksiAdrController::class, 'downloadExcel'])->name('adr.download.excel');
+Route::resource('adr', TransaksiAdrController::class);

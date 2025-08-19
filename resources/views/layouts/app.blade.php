@@ -15,6 +15,14 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap Bundle (jika belum ada di app.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    @stack('styles')
 </head>
 <body>
     <div id="app">
@@ -76,5 +84,7 @@
             @yield('content')
         </main>
     </div>
+    
+    @stack('scripts')
 </body>
 </html>
